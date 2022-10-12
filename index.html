@@ -1,65 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Superhero Clash</title>
-</head>
-<body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="styleshee" href="./development/style.css">
+  </head>
 
+  <body>
 
-
-    <div class="columns">
-        <div id="leftbox" class="column">
-          <div id="wikileft">
-           wikipedia
-          </div>
-          <p id="wikiinfo"> information of hero</p>
-        </div>
-         
+    <div class="content container has-text-centered"> 
+      <h1 class="title has-text-success">Superhero Clash</h1>
+      <h2 class="subtitle">Subtitle</h2>
+      
+      <div class="tile is-ancestor"> <!-- Left column for Hero 1 -->
+        <div class="tile is-parent">
+          <article class="tile is-child box has-background-info">
+            <p class="title has-text-white">Hero 1</p>
+            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             
+            <label for="heroSelect1"></label>
+            <select name="heroeSelect1">
+              <option>Superheroes</option>
+              <option>Spiderman</option>
+              <option>Superman</option>
+              <option>Flash</option>
+              <option>Batman</option>
+            </select>
 
-        <div id="middlebox" class="column">
-            <div class="select">
-                <select id="rightselection">
-                  <option>Superheroes</option>
-                  <option>Spiderman</option>
-                  <option>Superman</option>
-                  <option>Flash</option>
-                  <option>Batman</option>
-                </select>
-              </div>
-
-              <div class="select">
-                
-                <select id="leftselection">
-                  <option>Superheroes</option>
-                  <option>Spiderman</option>
-                  <option>Superman</option>
-                  <option>Flash</option>
-                  <option>Batman</option>
-                </select>
-              </div>
-          
-          <button id="fightbtn" class="button is-danger">Fight</button>
-          
-          <div id="result">
-            <p>This area shows the battle result</p>
-          </div>
+            <!-- <img> space here, set to display none in css-->
+            <div class=has-text-white id="hero2Wiki"> 
+              <p> This area shows information from wikipedia</p>
+            </div>
+            <div class=has-text-white id="hero1stats">
+              <p>This area shows hero 1's stats</p>
+            </div>
+          </article>
         </div>
 
-        
-                <div id="rightbox" class="column">
-            <div id="wikiright">
-                wikipedia
+        <div class="tile is-parent"> <!-- Middle Column for Fight Button and Battle Result-->
+          <article class="tile is-child box has-background-success">
+            <p class="title has-text-white">Choose your fighters!</p>
+            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <button id="fightbtn" class="button is-dark">Fight</button>
+            <div class=has-text-white id="result">
+              <p>This area shows the battle result</p>
             </div>
-            <p id="wikiinfo"> information of hero</p>
-    </div>
+          </article>
+        </div>
 
+        <div class="tile is-parent"> <!-- Right Column for Hero 2-->
+          <article class="tile is-child box has-background-danger">
+            <p class="title has-text-white">Hero 2</p>
+            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <label for="heroSelect2"></label>
+            <select name="heroSelect2">
+              <option>Spiderman</option>
+              <option>Superman</option>
+              <option>Flash</option>
+              <option>Batman</option>
+            </select>
 
-    
-    
-</body>
+            <!-- <img> space here, set to display none in css-->
+            <div class=has-text-white id="hero2Wiki"> 
+              <p> This area shows information from wikipedia</p>
+            </div>
+            <div class=has-text-white id="hero2stats">
+              <p>This area shows hero 2's stats</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <script src="./development/script.js" > </script>
+  </body>
 </html>
