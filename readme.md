@@ -1,88 +1,114 @@
-# Superhero Clash!
+# Pokemon Clash!
 
-## Project Description
+## Critical Development Notes
 
-Our project is a webpage users can use to compare two superheroes to find out which is stronger. We will be using two APIs. The first API is "Superhero API", which will allow us look up heroes and some statistics about how strong they are. The second API is "Wikipedia API", which will allow us to take an image from a superheroes wikipedia entry to display on our webpage, as well as provide a link to their powers and abilities section. 
+After switch to pokemon API, intended wikipedia functionalities for superheroes no longer works (most pokemon have no individual wiki entrys). Best functionality with wikipedia api would be to link what generation they are in. 
 
-## User Story
+https://www.tcgdex.net/docs could be used to pull up an image of the trading card. https://docs.pokemontcg.io/getting-started/authentication as a backup. If so, find way to add alt text? Placeholder images could be back of pokemon trading cards. Would be cool if you hit confirm and the card turned around into that pokemon's card. If no image, can always pull up pokemon sprite.
 
-AS A user who is discussing superheroes
-I WANT to compare which superhero is stronger
-SO THAT I can use real data to back up my claims
-
-## Work Flow
-
-GIVEN When I want to compare to superhero's strengths 
-WHEN I click one the dropdown menu
-THEN I am presented with a list of superheroes to select from
-WHEN I select two heroes, I can then press a button to have them battle
-THEN the viewport displays a message saying who is stronger, their stats are displayed, and images of them appear
-WHEN I click on one of the images
-THEN I am taken to the powers and abilities section of their wikipedia page 
+Research into random image scrappers has said be careful as it quite often pulls up pornography or highly offensive material. Best avoid. Worst come to worst, we can put an unrelated API. 
 
 ## Active Development Notes
 
-Team needs to decide roles and responsibilities. 
+If unable to have user only submit, create .catch for confirm event listeners. If there's an error, it does not change local storage. Will only be an issue if user has confirmed sucessfully both times. 
 
-Team needs to discuss if we wish to coordinate times to work together or work mostly separately.
+Develop a new use for a second API. 
 
-Figure out deadlines for individual pieces so other contributors can utilize it and deadlines for final contributions so the project manager has time to ensure all of the code fits together flawless. 
+Develop function to populate a list of pokemon names for the autocomplete feature. If possible, find way to lock selections to only pokemon on that list. 
 
-Discuss if Superhero API is worth using. Data pulled from there is underwhelming and may be difficult to use. Discuss if would we look for a different superhero api, or pivot to another battle system like pokemon. 
+Find comfortable scaling for text, buttons, and input boxes. 
+
+Check with team to decide if column 1 and 3 can be combined (depends heavily on second API) If not, find Bulma feature to move center tile to left when viewport switches to mobile size. If that doesn't work, see if we can make one 2x2 sized tile on left for fight and two 2x1 tiles on right for confirm buttons. If all else fails, move middle column left in html and deal with slightly less appealing design.
+
+## Final Check Development Notes
+
+Ensure title and header are updated to new names. 
+
+Ensure code is refactored, images and text use accessable features. Remove excess console logs and .js file. 
+
+Update readme, wireframe, screenshot, and ensure repo name gets changed to correct name when finalized
+
+Create presentation and create script for presentation if needed. Make sure everyone knows when they speak. 
+
+## Link to Deployed Project
+
+TBA
+
+## Project Description
+
+Our project is a webpage users can use to compare two pokemon to find out which is stronger. We will be using two APIs. The first API is PokeAPI, which will allow us look up pokemon and some statistics about how strong they are. The second API is "Wikipedia API", which will allow us to take an image from a pokemon's wikipedia entry to display on our webpage, as well as provide a link to their page.
+
+## User Story
+
+AS A user who is discussing pokemon
+I WANT to compare which one has is stronger
+SO THAT I can use real data and statistics to quickly back up my claims
+
+## Work Flow
+
+GIVEN When I want to compare two pokemon's strengths 
+WHEN I type into one of the two text input areas
+THEN I will be able to start typing a pokemon's name
+WHEN I type a pokemon's name
+THEN I will be assisted by autocomplete to ensure I get the correct data
+WHEN I have hit the two confirm buttons sucessfully
+Then I will be able to click the fight button. 
+WHEN I press the fight button
+THEN I will be able to read a message telling me which pokemon is stronger
+
+SECOND API WHEN/THENS
+
+## Known Issues
+
+TBA 
+
+Possibly incorrect name error. 
 
 ## Development beyond MVP
 
-Random Button
+Displaying of both pokemon's stats on the page for the user to see. 
+
+Random Pokemon Button 
+
+Dark Mode 
+
+Give user small feedback that confirm was hit sucessfully
 
 Messages detailing more than just "X would Win" or "They would Tie". Random messages, or messages with different text based on the magnitude of difference between power levels. 
 
+SECOND API BEYOND MVP
+
 ## Future Development
-Allowing of multiple heroes to be grouped together in teams
+
+Allowing of multiple pokemon to be grouped together in teams to compare all 6 possible pokemon a trainer can have
+
+Add in pokemon types to adjust stat values to account for weaknesses and resistences 
+
+Adding in pokemon move lists and accounting for turn order to increase accuracy of results
+
+Adding in customizable levels, moves, and other attributes that would affects relative strength
+
+More detailed results messages, such as including what move a pokemon used to "Win" the fight. 
+
+SECOND API 
 
 ## Wireframe 
 
-![Here is the first draft of our Wireframe](./assets/SuperheroClashWireframe.png)
+TBA
+
+## Screenshot 
+
+TBA
 
 ## Work Division 
 
-Student - Style: This person is responsible for implementing the CSS framework to match our wireframe. They are also in charge of making sure the UI is polished and responsive. 
+Jeff - Utilizing Pokemon API to fetch pokemon data and determine fight results
 
-Student - Superhero API: This person is responsible for Superhero API. They need to make sure the webpage allows for input of a superheroes name for the API to query. The API then needs to return the array of power stats of both user inputs, compare them, and output a descriptive message of who would win. 
+John - Bulma framework design, pair programming, non-programming tasks 
 
-STUDENT - Wikipedia API: This person is responsible for the Wikipedia API. They need to make sure they can receive the name of the superhero the user wants. They then need to take that name and query wikipedia for it. They need to display an image of that hero on our webpage. When that image is clicked on, the webpage needs to open a new tab to the powers and abilities section of the wikipedia article about that superhero.
+Faiyaz - Utilizing Pokemon API to autocomplete pokemon names on input forms
 
-STUDENT - Project Management: Merging and pushing code, refactoring and ensuring everything works together, assisting other students with their code, creating presention, and additional coding tasks as needed. 
-
-Note- Divisions of responsibilities need to be fluid. If a particular tasks is expected to be 25% of the total work and it actually takes 5% of the time, it's in our best interests to figure out how we can more evenly divide work. Even if you're finished with "you
-
-## Project Considerations: 
-
-Work load should be a little fluid. If we think using a particular API is going to be 20% of the total work, and it only takes 5% of the work, while styling the website takes way more work than anticipated, we should adjust. It's in our best interests to help each other out. If you're finished or you're going to finish very early with "your section", see how you can help because it's "our project" being graded. 
-
-Let's try to utilize "let" as often as you can instead of relying on "var". With function and global scoped variables, people may try to manipulate var in different ways that break our code. This can be a massive source of frustration for us, and it's something we really need to learn as we begin program with collaborators. [Youtube Video on Let vs Var.](https://www.youtube.com/watch?v=XgSjoHgy3Rk)
-
-
-## Git and Github notes 
-
-Github Main: We can no longer push to the main page (aka, the portion of our webpage that displays). We now need to review each others code and at least one of us needs to accept each others changes. Please DO NOT just auto-merge anything to the main branch. Take the time to review the code. Leave comments. Ask questions. Only when you're sure you're comfortable merging this is going to help advance the project, then do so. When in doubt, discuss it with someone else. 
-
-Github branches: Since we are not able to push to main like our work before, we have to work in individual branches. 
-
-Create a new branch on gitbash: "git checkout -b (name-of-your-new-branch"
-
-Push your new branch to github: "git push origin (name-of-your-new-branch)"
-
-Git Stash: I found a command in git called "git stash". This allows you to stash away local changes you've made to code when you need to make a pull from the main branch. In a nutshell, navigate to the repo in git and add your local files. Instead of commiting them, instead enter "git stash". Then you can git pull from the main branch to get the newest code. VSCode will then allow you to compare the new mainbranch code with what's on your local system to see which bits and bobs you wish to keep. For safety, until you've tried it, I'd still keep a backup of your code somewhere else when you first try it. 
-
-## Development Questions
-
-Part of grading is utilizing local storage. Maybe we can store the last 3 or 5 battles in the footer, or keep track of the strongest heroes that have been graded. 
-
-Superhero API calls by an ID number, not a name. With 700+ heroes, what is the best way to implement this? Instead of having an auto-fill input, is it best to have a dropdown menu people can scroll through. Is there an easy way to export all the names into an array for us to use and are we going to have to manually enter in an array with those names to their ID's. 
-
-Wikipedia API needs a name to search for, not an ID number. What's the best way to pull data from superhero api to then send to Wikipedia API? 
-
-If the "powers and abilties" section doesn't exist for the wikipedia entry, what's the best way to check if that link is invalid so we can send users instead to just the top of the article? Should we just only link to the wikipedia itself? 
+Tanner - Utilizing SECOND API 
 
 ## Project Requirements 
 ### Just copying this down so we do not have to look in a different spot for this. 
