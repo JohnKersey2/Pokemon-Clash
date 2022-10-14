@@ -3,36 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Superhero Clash</title>
+    <title>Pokemon Title (Change Me)</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="styleshee" href="./development/style.css">
-    
   </head>
 
   <body>
-
     <div class="content container has-text-centered"> 
-      <h1 class="title has-text-success">Superhero Clash</h1>
-      <h2 class="subtitle">Subtitle</h2>
+      <h1 class="title is-2 has-text-success">Pokemon Title (Change Me)</h1> <!-- DONT FORGET TO CHANGE THIS AND TITLE-->
+      <h2 class="subtitle">Will Your Pokemon Win?</h2>
       
-      <div class="tile is-ancestor"> <!-- Left column for Hero 1 -->
+      <div class="tile is-ancestor"> <!-- Left column for Pokemon 1 -->
         <div class="tile is-parent">
           <article class="tile is-child box has-background-info">
-            <p class="title has-text-white">Hero 1</p>
-            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <label for="heroSelect1"></label>
+            <p class="title has-text-white">Pick your Pokemon!</p>
+            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p> 
+            <label for="Pokemon Selection 1"></label>
             <form>
-                <input id="pokemon1" type="text" placeholder="Enter Hero Name" />   
-                <button id="button-submit1" type="submit">Confirm</button>             
+                <input id="pokemonOne" type="text" placeholder="Enter Pokemon Name" />   
+                <button id="pokemonOneConfirm" type="submit">Confirm</button>             
             </form>
-
-            <!-- <img> space here, set to display none in css-->
-            <div class=has-text-white id="hero2Wiki"> 
-              <p> This area shows information from wikipedia</p>
+            <div class=has-text-white> 
+              <p> This area could potentially be a link or show information from wikipedia / second API</p>
             </div>
-            <div class=has-text-white id="hero1stats">
-              <p>This area shows hero 1's stats</p>
+            <div class=has-text-white >
+              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
             </div>
           </article>
         </div>
@@ -40,32 +35,29 @@
         <div class="tile is-parent"> <!-- Middle Column for Fight Button and Battle Result-->
           <article class="tile is-child box has-background-success">
             <p class="title has-text-white">Choose your fighters!</p>
-            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <button id="fightbtn" class="button is-dark">Fight</button>
+            <p class="subtitle has-text-white">If your pokemon stronger than a potential challengers? Enter in your Pokemon's name and hit the "confirm" button. Then do the same for your challenger. Once both pokemon are ready, all that's left is to hit that "Fight!" button!</p>
+            <button id="fightButton" class="button is-dark">Fight!</button>
             <div class=has-text-white id="result">
-              <p>This area shows the battle result</p>
+              <p id="result">Waiting for battle!</p>
             </div>
           </article>
         </div>
 
-        <div class="tile is-parent"> <!-- Right Column for Hero 2-->
+        <div class="tile is-parent"> <!-- Right Column for Challenger / Pokemon 2-->
           <article class="tile is-child box has-background-danger">
-            <p class="title has-text-white">Hero 2</p>
-            <p class="subtitle has-text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            
-            <label for="heroSelect2"></label>
+            <p class="title has-text-white">Pick your Challenger!</p>
+            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p>
+            <!-- List of testable pokemon names. Classic fights from the show? -->
+            <label for="Pokemon 2 Selection"></label>
             <form>
-                <input id="pokemon2" type="text" placeholder="Enter Hero Name" />
-                <button id="button-submit2" type="submit">Confirm</button>
-                
+                <input id="pokemonTwo" type="text" placeholder="Enter Challenger Name" />
+                <button id="pokemonTwoConfirm" type="submit">Confirm</button>
             </form>
-
-            <!-- <img> space here, set to display none in css-->
-            <div class=has-text-white id="hero2Wiki"> 
-              <p> This area shows information from wikipedia</p>
+            <div class=has-text-white> 
+              <p> This area could potentially be a link or show information from wikipedia / second API</p>
             </div>
-            <div class=has-text-white id="hero2stats">
-              <p>This area shows hero 2's stats</p>
+            <div class=has-text-white>
+              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
             </div>
           </article>
         </div>
