@@ -1,10 +1,10 @@
 let wikileftEl = document.getElementById("wikileft");
 let wikiinfoEl = document.getElementById("wikiinfo");
 let fightbtnEl = document.getElementById("fightbtn");
-let buttonsubmit1El = document.getElementById("button-submit1")
-let buttonsubmit2El = document.getElementById("button-submit2")
-var pokemonEl1 = document.getElementById("pokemon1")
-var pokemonEl2 = document.getElementById("pokemon2")
+let buttonsubmit1El = document.getElementById("button-submit1");
+let buttonsubmit2El = document.getElementById("button-submit2");
+var pokemonEl1 = document.getElementById("pokemon1");
+var pokemonEl2 = document.getElementById("pokemon2");
 
 
 
@@ -33,9 +33,7 @@ console.log(pokemon2);
 fightbtnEl.addEventListener("click", function() {
 
 
-
-
-    fetch (`https://pokeapi.co/api/v2/pokemon/35/`)
+    fetch (`https://pokeapi.co/api/v2/pokemon/${pokemon1}/`)
     
     .then((response) => response.json())
     .then((data) =>    localStorage.setItem("character1", data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat)
@@ -45,7 +43,7 @@ fightbtnEl.addEventListener("click", function() {
     let characterOneStats = localStorage.getItem("character1")
     console.log(characterOneStats);
 
-    fetch (`https://pokeapi.co/api/v2/pokemon/36/`)
+    fetch (`https://pokeapi.co/api/v2/pokemon/${pokemon2}/`)
     
     .then((response) => response.json())
     .then((data) =>    localStorage.setItem("character2", data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat)
