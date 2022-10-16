@@ -53,23 +53,23 @@ fightButtonEl.addEventListener("click", function() {
         document.getElementById("result").innerHTML = "The best trainers check that they spelled both Pokemons' names correctly. Don't forget to confirm both Pokemon choices!"
     }
     else if(pokemonOneStats > pokemonTwoStats){
-        console.log(pokemonName1 + " Wins")
-        document.getElementById("emoji1").textContent = happy.emoji
-        document.getElementById("emoji2").textContent = angry.emoji
+        console.log(pokemonName1 + " Wins")        
         console.log(pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " has defeated " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + "!") // How to capitalize the pokemon's name
-        document.getElementById("result").innerHTML = pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " has defeated " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + "!"       
+        document.getElementById("result").innerHTML = pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " has defeated " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + "!"
+        document.getElementById("emoji1").textContent = happy.emoji
+        document.getElementById("emoji2").textContent = angry.emoji       
     }
     else if (pokemonTwoStats > pokemonOneStats){
-        console.log(pokemonName2 + " Wins") 
+        console.log(pokemonName2 + " Wins")         
+        document.getElementById("result").innerHTML = pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " has defeated " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + "!"
         document.getElementById("emoji1").textContent = angry.emoji
         document.getElementById("emoji2").textContent = happy.emoji
-        document.getElementById("result").innerHTML = pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " has defeated " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + "!"
     }
     else {
-        console.log("Draw!") // Pikachu and Oddish are equal in strength to test
+        console.log("Draw!") // Pikachu and Oddish are equal in strength to test        
+        document.getElementById("result").innerHTML = "Test results are inconclusive. " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " and " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " are so close in strength, it'll most likely end in a draw. That means you're both winners! Or losers..."
         document.getElementById("emoji1").textContent = happy.emoji
         document.getElementById("emoji2").textContent = happy.emoji
-        document.getElementById("result").innerHTML = "Test results are inconclusive. " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " and " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " are so close in strength, it'll most likely end in a draw. That means you're both winners! Or losers..."
     }})
 
 
