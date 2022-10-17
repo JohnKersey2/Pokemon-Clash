@@ -40,6 +40,8 @@ pokemonTwoConfirm.addEventListener("click", function (event) {
 // takes data variables, calculates the winner, changes text under fight box
 fightButtonEl.addEventListener("click", function() {
 
+    getCards()
+
     // creates variables from saved names and stats in local storage
     let pokemonOneStats = localStorage.getItem("pokemonOneStats")
     console.log(pokemonOneStats)
@@ -70,6 +72,7 @@ fightButtonEl.addEventListener("click", function() {
         document.getElementById("result").innerHTML = "Test results are inconclusive. " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " and " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " are so close in strength, it'll most likely end in a draw. That means you're both winners! Or losers..."
         document.getElementById("emoji1").textContent = happy.emoji
         document.getElementById("emoji2").textContent = happy.emoji
+        
     }})
 
 
@@ -94,3 +97,18 @@ async function setEmoji(){
     
 }
 setEmoji()
+
+async function getCards(){
+    var response = await fetch("https://api.tcgdex.net/v2/en/hp/80")
+    var cards = await response.json();
+    for(let i = 0; i < 25; i++){
+        var url = cards.cards[i].image
+        if(url !== undefined){
+
+            document.getElementById("cardimage").insertAdjacentHTML("beforeend", `<img src="${url}/low.webp"/>`)
+        }
+        console.log(url);
+
+
+    }      
+}
