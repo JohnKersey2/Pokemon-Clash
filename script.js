@@ -1,10 +1,11 @@
 let fightButtonEl = document.getElementById("fightButton") // for Fight button
 let pokemonOneConfirm = document.getElementById("pokemonOneConfirm") // for Confirm Buttons
-let pokemonTwoConfirm = document.getElementById("pokemonTwoConfirm") // challenger in index.html refers to vars involving pokemon2
+let pokemonTwoConfirm = document.getElementById("pokemonTwoConfirm") // Rival in index.html refers to vars involving pokemon2
 let pokemonOne = document.getElementById("pokemonOne") // saves the pokemon chosen by user 
 let pokemonTwo = document.getElementById("pokemonTwo")  
-var happy = null
-var angry = null
+localStorage.setItem("pokemonOneStats", null) // these prevent an error on reload with the fight button
+localStorage.setItem("pokemonTwoStats", null)
+
 
 // On confirm click, these two functions save pokemon names and summed stats to local storage
 pokemonOneConfirm.addEventListener("click", function (event) {  
@@ -14,17 +15,12 @@ pokemonOneConfirm.addEventListener("click", function (event) {
       .then((response) => response.json())
       .then((data) => {
         localStorage.setItem("pokemonOneStats", data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat)
-        document.getElementById("pokeimg1").setAttribute("src", data.sprites.front_default);
+        document.getElementById("pokeimg1").setAttribute("src", data.sprites.front_default); //possibly set to local storage?
       });
 
      // MVP would just be leaving these columns with only confirm button and no change on either tile
       // Potentially pull out each data stat to change column 1/3 displays, if going beyond MVP
-
-      
-
     });
-
-
 
 pokemonTwoConfirm.addEventListener("click", function (event) {
         event.preventDefault()      
@@ -58,57 +54,54 @@ fightButtonEl.addEventListener("click", function() {
         console.log(pokemonName1 + " Wins")        
         console.log(pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " has defeated " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + "!") // How to capitalize the pokemon's name
         document.getElementById("result").innerHTML = pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " has defeated " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + "!"
-        document.getElementById("emoji1").textContent = happy.emoji
-        document.getElementById("emoji2").textContent = angry.emoji       
+        //document.getElementById("emoji1").textContent = happy.emoji
+        //document.getElementById("emoji2").textContent = angry.emoji       
     }
     else if (pokemonTwoStats > pokemonOneStats){
         console.log(pokemonName2 + " Wins")         
         document.getElementById("result").innerHTML = pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " has defeated " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + "!"
-        document.getElementById("emoji1").textContent = angry.emoji
-        document.getElementById("emoji2").textContent = happy.emoji
+        //document.getElementById("emoji1").textContent = angry.emoji
+        //document.getElementById("emoji2").textContent = happy.emoji
     }
     else {
         console.log("Draw!") // Pikachu and Oddish are equal in strength to test        
         document.getElementById("result").innerHTML = "Test results are inconclusive. " + pokemonName1.toUpperCase().slice(0,1) + pokemonName1.slice(1) + " and " + pokemonName2.toUpperCase().slice(0,1) + pokemonName2.slice(1) + " are so close in strength, it'll most likely end in a draw. That means you're both winners! Or losers..."
-        document.getElementById("emoji1").textContent = happy.emoji
-        document.getElementById("emoji2").textContent = happy.emoji
-        
+        //document.getElementById("emoji1").textContent = happy.emoji
+        //document.getElementById("emoji2").textContent = happy.emoji   
     }})
 
+// Unused code left her incase functionality is needed later. 
 
-async function fetchEmoji(emotion){
-    let response = await fetch(`https://api.emojisworld.fr/v1/search?q=${emotion}`)
-    var emoji = await response.json()
-    return emoji
-    
+// var happy = null
+// var angry = null
 
+//async function fetchEmoji(emotion){
+//    let response = await fetch(`https://api.emojisworld.fr/v1/search?q=${emotion}`)
+//    var emoji = await response.json()
+//    return emoji
+// }
 
-}
-
-
-
-async function setEmoji(){
-    
-
-    var emoji = await fetchEmoji("happy")
-    happy = emoji.results[0];
-    emoji = await fetchEmoji("angry")
-    angry = emoji.results[0];
-    
-}
-setEmoji()
+// async function setEmoji(){
+//    var emoji = await fetchEmoji("happy")
+//    happy = emoji.results[0];
+//    emoji = await fetchEmoji("angry")
+//    angry = emoji.results[0];  
+//}
+// setEmoji()
 
 async function getCards(){
-    var response = await fetch("https://api.tcgdex.net/v2/en/hp/80")
+    const removeCards = document.getElementsByClassName('removeCards') // Removes old cards before adding new ones
+    while (removeCards.length > 0) removeCards[0].remove()
+
+    var response = await fetch("https://api.tcgdex.net/v2/en/hp/80")  // pulls a portion of cards into an array
     var cards = await response.json();
+    var randomcards = cards.cards.sort(() => Math.random() - Math.random()).slice(0, 25)
+    console.log(randomcards)
     for(let i = 0; i < 25; i++){
         var url = cards.cards[i].image
         if(url !== undefined){
-
-            document.getElementById("cardimage").insertAdjacentHTML("beforeend", `<img src="${url}/low.webp"/>`)
+            document.getElementById("cardimage").insertAdjacentHTML("afterbegin", `<img class="removeCards" src="${url}/low.webp"/>`)
         }
-        console.log(url);
-
-
     }      
 }
+

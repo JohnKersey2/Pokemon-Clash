@@ -3,74 +3,69 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon Title (Change Me)</title>
+    <title>Pokemon Clash</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="styleshee" href="./development/style.css">
   </head>
 
   <body>
     <div class="content container has-text-centered"> 
-      <h1 class="title is-2 has-text-success">Pokemon Title (Change Me)</h1> <!-- DONT FORGET TO CHANGE THIS AND TITLE-->
-      <h2 class="subtitle">Will Your Pokemon Win?</h2>
+      <h1 class="title is-2 has-text-success">Pokemon Clash</h1> 
+      <h2 class="subtitle">Is your pokemon stronger than your rivals? Enter in your Pokemon's name and hit the "confirm" button. Then do the same for your rival. Once both pokemon are ready, hit the "Fight!" button to see who is stronger!</h2>
       
       <div class="tile is-ancestor"> <!-- Left column for Pokemon 1 -->
         <div class="tile is-parent">
           <article class="tile is-child box has-background-info">
-            <p class="title has-text-white">Pick your Pokemon!</p>
-            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p> 
+            <p class="title has-text-white">Pick your favorite Pokemon!</p>
+            <img id="pokeimg1">
             <label for="Pokemon Selection 1"></label>
             <form>
-                <input id="pokemonOne" type="text" placeholder="Enter Pokemon Name" />   
+                <input id="pokemonOne" type="text" placeholder="Enter Your Pokemon" />   
                 <button id="pokemonOneConfirm" type="submit">Confirm</button>             
             </form>
             <div class=has-text-white> 
-              <p> This area could potentially be a link or show information from wikipedia / second API</p>
+              <p>If you can't think of any pokemon, some of Ash's best pokemon are Pikachu, Charizard, and Snorlax.</p>
             </div>
-            <div class=has-text-white >
-              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
-              <p id="emoji1"> </p>
-              <img id="pokeimg1">
-            </div>
+            <!-- <p id="emoji1"></p>      This is for the unused emoji api function-->
           </article>
         </div>
+        
 
-        <div class="tile is-parent"> <!-- Middle Column for Fight Button and Battle Result-->
-          <article class="tile is-child box has-background-success">
-            <p class="title has-text-white">Choose your fighters!</p>
-            <p class="subtitle has-text-white">If your pokemon stronger than a potential challengers? Enter in your Pokemon's name and hit the "confirm" button. Then do the same for your challenger. Once both pokemon are ready, all that's left is to hit that "Fight!" button!</p>
-            <button id="fightButton" class="button is-dark">Fight!</button>
-            <div class=has-text-white id="result">
-              <p id="result">Waiting for battle!</p>
-            </div>
-          </article>
-        </div>
-
-        <div class="tile is-parent"> <!-- Right Column for Challenger / Pokemon 2-->
+        <div class="tile is-parent"> <!-- Right Column for Rival / Pokemon 2-->
           <article class="tile is-child box has-background-danger">
-            <p class="title has-text-white">Pick your Challenger!</p>
-            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p>
-            <!-- List of testable pokemon names. Classic fights from the show? -->
+            <p class="title has-text-white">Pick your rival's Pokemon!</p>
+            <img id="pokeimg2"> <!-- Sprite appears here on confirm-->
             <label for="Pokemon 2 Selection"></label>
             <form>
-                <input id="pokemonTwo" type="text" placeholder="Enter Challenger Name" />
+                <input id="pokemonTwo" type="text" placeholder="Enter Rival's Pokemon" />
                 <button id="pokemonTwoConfirm" type="submit">Confirm</button>
             </form>
             <div class=has-text-white> 
-              <p> This area could potentially be a link or show information from wikipedia / second API</p>
+              <p>If you can't think of any pokemon, some of Ash's best pokemon are Eevee, Blastoise, and Arcanine.</p>
             </div>
-            <div class=has-text-white>
-              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
-              <p id="emoji2"> </p>
-              <img id="pokeimg2">
+              <!-- <p id="emoji2"> </p>    This is for the unused emoji api function-->             
+            </div>
+          </article>
+        </div>
+
+        <div class="tile is-parent"> <!-- Column for Fight Button and Battle Result-->
+          <article class="tile is-child box has-background-success">
+            <p class="title has-text-white">Prepare for Battle</p>
+            <p class="subtitle has-text-white">Once you can see you and your rival's pokemon, hit "Fight!" to see who wins!</p>
+            <button id="fightButton" class="button is-dark">Fight!</button>
+            <div class="has-text-white">
+              <p class="subtitle has-text-white" id="result">Waiting for battle!</p>
             </div>
           </article>
         </div>
       </div>
-      <h2>Which Pokemon will you choose next!</h2>
-      <div id="cardimage">
+      
+      <div class="has-text-centered">
+        <h2 class="title">Which Pokemon will you choose next!</h2>
+        <div id="cardimage">
 
+        </div>
       </div>
-
 
 
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>

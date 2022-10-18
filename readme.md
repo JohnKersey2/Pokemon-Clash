@@ -1,30 +1,13 @@
 # Pokemon Clash!
 
-## Critical Development Notes
-
-After switch to pokemon API, intended wikipedia functionalities for superheroes no longer works (most pokemon have no individual wiki entrys). Best functionality with wikipedia api would be to link what generation they are in. 
-
-https://www.tcgdex.net/docs could be used to pull up an image of the trading card. https://docs.pokemontcg.io/getting-started/authentication as a backup. If so, find way to add alt text? Placeholder images could be back of pokemon trading cards. Would be cool if you hit confirm and the card turned around into that pokemon's card. If no image, can always pull up pokemon sprite.
-
-Research into random image scrappers has said be careful as it quite often pulls up pornography or highly offensive material. Best avoid. Worst come to worst, we can put an unrelated API. 
-
 ## Active Development Notes
 
-If unable to have user only submit, create .catch for confirm event listeners. If there's an error, it does not change local storage. Will only be an issue if user has confirmed sucessfully both times. 
+Develop function to populate a list of pokemon names for the autofill feature. If possible, find way to lock selections to only pokemon on that list. 
 
-Develop a new use for a second API. 
-
-Develop function to populate a list of pokemon names for the autocomplete feature. If possible, find way to lock selections to only pokemon on that list. 
-
-Find comfortable scaling for text, buttons, and input boxes. 
-
-Check with team to decide if column 1 and 3 can be combined (depends heavily on second API) If not, find Bulma feature to move center tile to left when viewport switches to mobile size. If that doesn't work, see if we can make one 2x2 sized tile on left for fight and two 2x1 tiles on right for confirm buttons. If all else fails, move middle column left in html and deal with slightly less appealing design.
 
 ## Final Check Development Notes
 
-Ensure title and header are updated to new names. 
-
-Ensure code is refactored, images and text use accessable features. Remove excess console logs and .js file. 
+Ensure code is refactored, images and text use accessable features. Remove excess console logs and .js/.css files. 
 
 Update readme, wireframe, screenshot, and ensure repo name gets changed to correct name when finalized
 
