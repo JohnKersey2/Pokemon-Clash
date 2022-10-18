@@ -3,33 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pokemon Title (Change Me)</title>
+    <title>Pokemon Clash</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="styleshee" href="./development/style.css">
   </head>
 
   <body>
     <div class="content container has-text-centered"> 
-      <h1 class="title is-2 has-text-success">Pokemon Title (Change Me)</h1> <!-- DONT FORGET TO CHANGE THIS AND TITLE-->
+      <h1 class="title is-2 has-text-success">Pokemon Clash</h1> <!-- DONT FORGET TO CHANGE THIS AND TITLE-->
       <h2 class="subtitle">Will Your Pokemon Win?</h2>
       
       <div class="tile is-ancestor"> <!-- Left column for Pokemon 1 -->
         <div class="tile is-parent">
           <article class="tile is-child box has-background-info">
             <p class="title has-text-white">Pick your Pokemon!</p>
-            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p> 
+            <img id="pokeimg1">
+            <p class="subtitle has-text-white">Choose your Pokemon<br> Press confirm to lock in your choice!</p> 
             <label for="Pokemon Selection 1"></label>
             <form>
                 <input id="pokemonOne" type="text" placeholder="Enter Pokemon Name" />   
                 <button id="pokemonOneConfirm" type="submit">Confirm</button>             
             </form>
             <div class=has-text-white> 
-              <p> This area could potentially be a link or show information from wikipedia / second API</p>
+              <!-- <p> This area could potentially be a link or show information from wikipedia / second API</p> -->
             </div>
             <div class=has-text-white >
-              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
+              <!-- <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p> -->
               <p id="emoji1"> </p>
-              <img id="pokeimg1">
+              
             </div>
           </article>
         </div>
@@ -48,7 +49,8 @@
         <div class="tile is-parent"> <!-- Right Column for Challenger / Pokemon 2-->
           <article class="tile is-child box has-background-danger">
             <p class="title has-text-white">Pick your Challenger!</p>
-            <p class="subtitle has-text-white">This area could be used for a variety of things. It could potentially show an image from another API. It could be used to give suggestions of pokemon in case whomever is testing this project doesn't know any pokemon names.</p>
+            <img id="pokeimg2">
+            <p class="subtitle has-text-white">Choose your Challengers Pokemon<br> Press confirm to lock in their choice!</p>
             <!-- List of testable pokemon names. Classic fights from the show? -->
             <label for="Pokemon 2 Selection"></label>
             <form>
@@ -56,12 +58,12 @@
                 <button id="pokemonTwoConfirm" type="submit">Confirm</button>
             </form>
             <div class=has-text-white> 
-              <p> This area could potentially be a link or show information from wikipedia / second API</p>
+              <!-- <p> This area could potentially be a link or show information from wikipedia / second API</p> -->
             </div>
             <div class=has-text-white>
-              <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p>
+              <!-- <p>This area shows could show pokemon 2's stats, if we go beyond MVP</p> -->
               <p id="emoji2"> </p>
-              <img id="pokeimg2">
+              
             </div>
           </article>
         </div>

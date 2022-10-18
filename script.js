@@ -35,6 +35,7 @@ pokemonTwoConfirm.addEventListener("click", function (event) {
             localStorage.setItem("pokemonTwoStats", data.stats[0].base_stat + data.stats[1].base_stat + data.stats[2].base_stat + data.stats[3].base_stat + data.stats[4].base_stat + data.stats[5].base_stat)
             document.getElementById("pokeimg2").setAttribute("src", data.sprites.front_default);
         }
+        
         )})
 
 // takes data variables, calculates the winner, changes text under fight box
