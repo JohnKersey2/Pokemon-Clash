@@ -9,15 +9,18 @@
   </head>
 
   <body>
-    <div class="content container has-text-centered"> 
-      <h1 class="title is-2 has-text-success">Pokemon Clash</h1> 
-      <h2 class="subtitle">Is your pokemon stronger than your rivals? Enter in your Pokemon's name and hit the "confirm" button. Then do the same for your rival. Once both pokemon are ready, hit the "Fight!" button to see who is stronger!</h2>
-      
+    <header class="content container has-text-centered"> 
+      <h1 class="title is-1 has-text-success">Pokemon Clash</h1> 
+      <h2 class="subtitle is-4"><span class="is-sr-only">Text for screen readers</span>Is your pokemon stronger than your rival's? Enter in your Pokemon's name and hit the "confirm" button. Then do the same for your rival. Once both pokemon are ready, hit the "Fight!" button to see who is stronger!</h2>
+    </header>
+
+    <main class="content container has-text-centered">
+
       <div class="tile is-ancestor"> <!-- Left column for Pokemon 1 -->
         <div class="tile is-parent">
           <article class="tile is-child box has-background-info">
             <p class="title has-text-white">Pick your favorite Pokemon!</p>
-            <img id="pokeimg1">
+            <img id="pokeimg1"> <!-- Sprite appears here on confirm-->
             <label for="Pokemon Selection 1"></label>
             <form>
                 <input id="pokemonOne" type="text" placeholder="Enter Your Pokemon" />   
@@ -26,7 +29,7 @@
             <div class=has-text-white> 
               <p>If you can't think of any pokemon, some of Ash's best pokemon are Pikachu, Charizard, and Snorlax.</p>
             </div>
-            <!-- <p id="emoji1"></p>      This is for the unused emoji api function-->
+            <!-- <p id="emoji1"></p>--> <!-- This is for the unused emoji api function-->
           </article>
         </div>
         
@@ -34,16 +37,16 @@
         <div class="tile is-parent"> <!-- Right Column for Rival / Pokemon 2-->
           <article class="tile is-child box has-background-danger">
             <p class="title has-text-white">Pick your rival's Pokemon!</p>
-            <img id="pokeimg2"> <!-- Sprite appears here on confirm-->
+            <img id="pokeimg2"> 
             <label for="Pokemon 2 Selection"></label>
             <form>
                 <input id="pokemonTwo" type="text" placeholder="Enter Rival's Pokemon" />
                 <button id="pokemonTwoConfirm" type="submit">Confirm</button>
             </form>
             <div class=has-text-white> 
-              <p>If you can't think of any pokemon, some of Ash's best pokemon are Eevee, Blastoise, and Arcanine.</p>
+              <p>If you can't think of any pokemon, some of Gary's best pokemon are Eevee, Blastoise, and Nidoking.</p>
             </div>
-              <!-- <p id="emoji2"> </p>    This is for the unused emoji api function-->             
+              <!-- <p id="emoji2"> </p>-->             
             </div>
           </article>
         </div>
@@ -54,19 +57,18 @@
             <p class="subtitle has-text-white">Once you can see you and your rival's pokemon, hit "Fight!" to see who wins!</p>
             <button id="fightButton" class="button is-dark">Fight!</button>
             <div class="has-text-white">
-              <p class="subtitle has-text-white" id="result">Waiting for battle!</p>
+              <p class="subtitle has-text-white" id="result">Waiting for battle!</p> <!-- Winner results get posted here -->
             </div>
           </article>
         </div>
-      </div>
+    </main>
       
-      <div class="has-text-centered">
-        <h2 class="title">Which Pokemon will you choose next!</h2>
-        <div id="cardimage">
+    <footer class="has-text-centered"> <!-- Trading cards are posted here -->
+      <h2 class="title">Which Pokemon will you choose next!</h2>
+      <div id="cardimage">
 
-        </div>
       </div>
-
+    </footer>
 
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="script.js" > </script>
