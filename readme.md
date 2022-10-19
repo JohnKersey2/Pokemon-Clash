@@ -2,7 +2,7 @@
 
 ## Link to Deployed Project
 
-TBA Once the repo name is changed. 
+[Link to Pokemon Clash](https://johnkersey2.github.io/Pokemon-Clash/)
 
 ## Screenshot 
 
