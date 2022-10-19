@@ -66,9 +66,9 @@ Dark Mode
 
 ## Work Division 
 
-Jeff - TBA
+Jeff - Utilizing Pokemon API to create fight results and TCGDex to add cards to footers
 
-John - TBA
+John - Bulma framework design, pair programming, bug fixes on API functions
 
 Faiyaz - TBA
 
